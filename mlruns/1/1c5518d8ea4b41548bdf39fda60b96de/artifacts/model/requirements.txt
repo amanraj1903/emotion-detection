@@ -1,0 +1,10 @@
+mlflow
+cffi==1.15.0
+defusedxml==0.7.1
+fsspec==2022.3.0
+keras==2.9.0
+pandas==1.4.2
+pillow==9.1.1
+scipy==1.8.0
+tblib==1.7.0
+tensorflow==2.9.1
