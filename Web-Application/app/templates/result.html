@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: rgb(255, 255, 255);
+            font-size: 2.7rem;
+        }
+
+        body {
+            background-color: gray;
+
+
+        }
+
+        .square {
+            height: 15px;
+            width: 15px;
+            display: flex;
+        }
+
+        .res {
+            display: flex;
+            justify-content: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            display: inline;
+            position: relative;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: aliceblue;
+        }
+        h2{
+            color: white;
+            font-size: 1.4rem;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Customer Sentiment Signal Analysis</h1>
+    </center>
+
+    <div class="res">
+
+        <table>
+            <tr>
+                <td>
+                    <div class="square" style="background-color: rgb(236, 253, 44);"></div>
+                </td>
+                <td>
+                    <h4>Joy</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="square" style="background-color: rgb(157, 158, 246);"></div>
+                </td>
+                <td>
+                    <h4> Sadness</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="square" style="background-color:  rgb(62, 190, 39);"></div>
+                </td>
+                <td>
+                    <h4> Fear</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="square" style="background-color: rgb(199, 40, 25);"></div>
+                </td>
+                <td>
+                    <h4> Anger</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="square" style="background-color: rgba(239, 239, 239, 0.922);"></div>
+                </td>
+                <td>
+                    <h4> Neutral</h4>
+                </td>
+            </tr>
+        </table>
+        <div class="result" style="padding-left: 200px; width: 700px;">
+            <div class="result-heading">
+                <!-- <h2>OverAll Prediction: {{overall}}</h2> -->
+            <center>
+                {% if overall =="joy" %}
+                    <h2>Overall Sentiment: <span style="color: rgb(236, 253, 44);font-size: 1.5rem;">Joy </span> </h2><br>
+                    {% elif overall =="sadness" %}
+                    <h2>Overall Sentiment: <span style="color: rgb(157, 158, 246);font-size: 1.5rem;"> Sadness </span>  </h2><br>
+                    {% elif overall =="fear" %}
+                    <h2>Overall Sentiment: <span style="color: rgb(62, 190, 39);font-size: 1.5rem;">Fear </span>  </h2><br>
+                    {% elif overall =="anger" %}
+                    <h2>Overall Sentiment: <span style="color: rgb(199, 40, 25);font-size: 1.5rem;">Anger </span> </h2> <br>
+                    {% elif overall =="neutral" %}
+                    <h2>Overall Sentiment: <span style="color: rgba(239, 239, 239, 0.922);font-size: 1.5rem;"> Neutral </span> </h2> <br>
+                    {% else %}
+                    <h2>Overall: <span> {{ overall }} </span> </h2> <br>
+                    {% endif %}
+                   <br>
+            </center>
+                <table style="align-items:none ;">
+                    <!-- sentence wise -->
+                    {% for i in range(1,value|length,2) %}
+                    {% if value[i] =="joy" %}
+                    <h3 style="color: rgb(236, 253, 44);"> {{ value[i-1] }} </h3>
+                    {% elif value[i] =="sadness" %}
+                    <h3 style="color: rgb(157, 158, 246);"> {{ value[i-1] }} </h3>
+                    {% elif value[i] =="fear" %}
+                    <h3 style="color: rgb(62, 190, 39);"> {{ value[i-1] }} </h3>
+                    {% elif value[i] =="anger" %}
+                    <h3 style="color: rgb(199, 40, 25);"> {{ value[i-1] }} </h3>
+                    {% elif value[i] =="neutral" %}
+                    <h3 style="color: rgba(239, 239, 239, 0.922);"> {{ value[i-1] }} </h3>
+                    {% else %}
+                    <h3>{{ value[i-1] }} </h3>
+                    {% endif %}
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

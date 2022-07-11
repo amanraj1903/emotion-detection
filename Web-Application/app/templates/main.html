@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Sentiment Signal Analysis</title>
+    <style>
+        body {
+            background-color: gray;
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            margin-top: 10%;
+            position: relative;
+        }
+
+        h1 {
+            color: rgb(255, 255, 255);
+            font-size: 2.7rem;
+        }
+
+        .btn {
+            background-color: rgb(172, 16, 16);
+            color: white;
+            border-radius: 8px;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .btn:hover {
+            transform: scale(1.2);
+        }
+
+        #customer-review:hover {
+            border-color: rgb(224, 35, 35);
+        }
+
+        #customer-review:active {
+            border-color: yellowgreen;
+        }
+
+        #customer-review {
+            width: 50%;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            padding: 15px 0 0 15px;
+            border: 2.5px solid green;
+        }
+
+        .comment {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="main">
+            <h1>Customer Sentiment Signal Analysis</h1>
+            <div class="row">
+                <form class="comment" action="result.html" method="POST">
+                    <textarea id="customer-review" name="result" class="form-control" rows="5"
+                        placeholder="Write your review.." required></textarea><br>
+                    <button class="btn" type="submit" , value="submit" style="margin: 1%; padding: 1%; ">Submit
+                        Review</button>
+                </form>
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>
